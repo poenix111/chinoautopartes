@@ -1,0 +1,31 @@
+body {
+  min-height: 100vh;
+  position: relative;
+  margin: 0;
+  padding-bottom: 75px;
+}
+
+footer {
+  position: absolute !important;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.card-body {
+  color: black;
+}
+
+.social,
+.copyright {
+  margin: auto;
+}
+
