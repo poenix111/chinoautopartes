@@ -17,7 +17,7 @@
 
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">Direccion</h4>
+                    <h4 class="card-title">Dirección</h4>
 
                     <div class="embed-responsive embed-responsive-16by9">
                         <iframe class="embed-responsive-item"
@@ -33,7 +33,7 @@
             <div class="card text-center">
 
                 <div class="card-body">
-                    <h4 class="card-title">Telefono</h4>
+                    <h4 class="card-title">Teléfono</h4>
                     <p class="card-text">3314156225</p>
                     <h4 class="card-title">Correo</h4>
                     <p class="card-text">chinoautomic@hotmail.com</p>
