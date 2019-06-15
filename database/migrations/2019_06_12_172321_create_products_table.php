@@ -17,7 +17,7 @@ class CreateProductsTable extends Migration
             $table->bigIncrements('id');
             $table->timestamps();
             $table->string('nombre', 200)->unique();
-            $table->integer('año', false, $unsigned = true);
+            $table->integer('año')->unsigned();
             $table->float('precio');
             $table->boolean('nuevo');
             $table->boolean('garantia');
@@ -25,6 +25,9 @@ class CreateProductsTable extends Migration
             $table->string('imagen');
             $table->integer('id_categoria')->unsigned();
             $table->integer('id_modelo')->unsigned();
+            $table->integer('id_marca')->unsigned();
+            $table->string('slug');
+
         }); 
     }
 

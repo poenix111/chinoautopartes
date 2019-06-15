@@ -21,3 +21,7 @@ Route::get('/contacto', function () {
 });
 
 
+
+Route::get('/login', function () {
+    return view('users.login');
+});
