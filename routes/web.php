@@ -22,6 +22,14 @@ Route::get('/contacto', function () {
 
 
 
-Route::get('/login', function () {
-    return view('users.login');
+
+Auth::routes(['register' => false]);
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::group( ['middleware' => 'auth' ], function()
+{
+    Route::resource('/product','ProductsController');
+    Route::resource('/modelo','ModelosController');
+    Route::resource('/category','CategoriesController');
+    Route::resource('/marca','MarcasController');
 });

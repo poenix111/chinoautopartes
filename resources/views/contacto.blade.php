@@ -34,7 +34,7 @@
 
                 <div class="card-body">
                     <h4 class="card-title">Teléfono</h4>
-                    <p class="card-text">3314156225</p>
+                    <p class="card-text">3334809599</p>
                     <h4 class="card-title">Correo</h4>
                     <p class="card-text">chinoautomic@hotmail.com</p>
                 </div>

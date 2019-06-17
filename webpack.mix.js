@@ -17,3 +17,4 @@ mix.js('resources/js/app.js', 'public/js')
 
 mix.sass('resources/sass/contacto.scss', 'public/css');
 mix.sass('resources/sass/global.scss', 'public/css');
+mix.sass('resources/sass/misc.scss', 'public/css');
