@@ -24,7 +24,7 @@
         @endforeach
         
       </div>
-      <div class="pagination justify-content-center " style="margin-top:15%">
+      <div class="pagination justify-content-center ">
           {{ $marcas  ->links() }}
         </div>
     </div>

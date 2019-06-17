@@ -49387,10 +49387,21 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/sass/welcome.scss":
+/*!*************************************!*\
+  !*** ./resources/sass/welcome.scss ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ 0:
-/*!****************************************************************************************************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/contacto.scss ./resources/sass/global.scss ./resources/sass/misc.scss ***!
-  \****************************************************************************************************************************************************/
+/*!**********************************************************************************************************************************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/contacto.scss ./resources/sass/global.scss ./resources/sass/misc.scss ./resources/sass/welcome.scss ***!
+  \**********************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -49398,7 +49409,8 @@ __webpack_require__(/*! /home/brian/Documents/chinoautopartes/chinoautopartes/re
 __webpack_require__(/*! /home/brian/Documents/chinoautopartes/chinoautopartes/resources/sass/app.scss */"./resources/sass/app.scss");
 __webpack_require__(/*! /home/brian/Documents/chinoautopartes/chinoautopartes/resources/sass/contacto.scss */"./resources/sass/contacto.scss");
 __webpack_require__(/*! /home/brian/Documents/chinoautopartes/chinoautopartes/resources/sass/global.scss */"./resources/sass/global.scss");
-module.exports = __webpack_require__(/*! /home/brian/Documents/chinoautopartes/chinoautopartes/resources/sass/misc.scss */"./resources/sass/misc.scss");
+__webpack_require__(/*! /home/brian/Documents/chinoautopartes/chinoautopartes/resources/sass/misc.scss */"./resources/sass/misc.scss");
+module.exports = __webpack_require__(/*! /home/brian/Documents/chinoautopartes/chinoautopartes/resources/sass/welcome.scss */"./resources/sass/welcome.scss");
 
 
 /***/ })
