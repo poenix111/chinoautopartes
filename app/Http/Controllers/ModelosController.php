@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use DB;
+use App\Modelo;
 
 class ModelosController extends Controller
 {
@@ -14,6 +16,9 @@ class ModelosController extends Controller
     public function index()
     {
         //
+        $modelos = DB::table('modelos')->paginate(15);
+
+        return view('modelo.index', compact('modelos'));
     }
 
     /**
@@ -24,6 +29,8 @@ class ModelosController extends Controller
     public function create()
     {
         //
+        return view('modelo.create');
+
     }
 
     /**
@@ -35,6 +42,12 @@ class ModelosController extends Controller
     public function store(Request $request)
     {
         //
+        $modelo = new Modelo;
+        $modelo->nombre = $request['name'];
+
+        $modelo->save();
+        return redirect('/modelo')->with('message', 'Modelo creado');;
+
     }
 
     /**

@@ -25,10 +25,11 @@ Route::get('/contacto', function () {
 
 Auth::routes(['register' => false]);
 Route::get('/home', 'HomeController@index')->name('home');
+Route::resource('/product','ProductsController');
 
 Route::group( ['middleware' => 'auth' ], function()
 {
-    Route::resource('/product','ProductsController');
+
     Route::resource('/modelo','ModelosController');
     Route::resource('/category','CategoriesController');
     Route::resource('/marca','MarcasController');

@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'Crear Categoría')
+@section('title', 'Crear Modelo')
 @section('head')
 <link href="{{ asset('css/misc.css') }}" rel="stylesheet">
 @endsection
@@ -10,10 +10,10 @@
   <div class="row justify-content-center">
     <div class="col-md-8">
       <div class="card">
-        <div class="card-header">{{ __('Registrar Categoría') }}</div>
+        <div class="card-header">{{ __('Registrar Modelo') }}</div>
 
         <div class="card-body">
-          <form method="POST" action="/category">
+          <form method="POST" action="/modelo">
             @csrf @method('POST')
 
             <div class="form-group row">
@@ -25,7 +25,7 @@
             </div>
             <div class="col-md-6 offset-md-4">
               <button type="submit" class="btn btn-primary" id="botonEnviar">
-                Registrar categoría
+                Registrar Modelo
               </button>
             </div>
 

@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 
 class ProductsController extends Controller
 {
+    public function __construct() {
+        $this->middleware("auth")->except(["show","index"]);   //You get the idea
+   }
     /**
      * Display a listing of the resource.
      *

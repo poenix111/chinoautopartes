@@ -49,32 +49,47 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ml-auto">
 
+
+        @if (Auth::check())
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Productos
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="/product">Mostrar</a>
+            <a class="dropdown-item" href="/product/create">Crear</a>
+          </div>
+        </li>
+        @else
         <li class="nav-item active">
           <a class="nav-link" href="/product">Productos</a>
         </li>
+        @endif
+
         @if (Auth::check())
-         <!-- Marca -->
-         <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
-              aria-haspopup="true" aria-expanded="false">
-              Categoría
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="/category">Mostrar</a>
-              <a class="dropdown-item" href="/category/create">Crear</a>
-            </div>
-          </li>
+        <!-- Marca -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Categoría
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="/category">Mostrar</a>
+            <a class="dropdown-item" href="/category/create">Crear</a>
+          </div>
+        </li>
         <!-- Modelo -->
         <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
-              aria-haspopup="true" aria-expanded="false">
-              Modelo
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="/modelo">Mostrar</a>
-              <a class="dropdown-item" href="/modelo/create">Crear</a>
-            </div>
-          </li>
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Modelo
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="/modelo">Mostrar</a>
+            <a class="dropdown-item" href="/modelo/create">Crear</a>
+          </div>
+        </li>
 
         <!-- Marca -->
         <li class="nav-item dropdown">

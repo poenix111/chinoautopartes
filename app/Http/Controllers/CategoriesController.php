@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use DB;
+use App\Category;
 
 class CategoriesController extends Controller
 {
@@ -14,6 +16,8 @@ class CategoriesController extends Controller
     public function index()
     {
         //
+        $categorias = DB::table('categories')->paginate(15);
+        return view('categoria.index', compact('categorias'));
     }
 
     /**
@@ -24,6 +28,7 @@ class CategoriesController extends Controller
     public function create()
     {
         //
+        return view('categoria.create');
     }
 
     /**
@@ -35,6 +40,12 @@ class CategoriesController extends Controller
     public function store(Request $request)
     {
         //
+        $categoria = new Category;
+        $categoria->nombre = $request['nombre'];
+
+        $categoria->save();
+        return redirect('/category')->with('message', 'Categoria creada');;
+
     }
 
     /**
