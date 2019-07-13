@@ -59,6 +59,8 @@
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
             <a class="dropdown-item" href="/product">Mostrar</a>
             <a class="dropdown-item" href="/product/create">Crear</a>
+            <a class="dropdown-item" href="/borrados/product">Productos borrados</a>
+
           </div>
         </li>
         @else

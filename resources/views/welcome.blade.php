@@ -6,7 +6,7 @@
 
 <link href="{{ asset('css/welcome.css') }}" rel="stylesheet">
 <meta name="viewport" content="width=device-width, user-scalable=no">
-
+<script src="lazysizes.min.js" async=""></script>
 <div>
   {{-- Se esta desarrolando el slider, revisar --}}
   <div class="container">
@@ -34,20 +34,22 @@
         </div>
 
         <div class="carousel-item">
-          <img class="img-responsive img-cus"
+          <img class="img-responsive img-cus lazyload" data-srcset="small.jpg 500w,
+          medium.jpg 640w,
+          big.jpg 1024w" sizes="(min-width: 1000px) 930px, 90vw"
             src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Nissan-logo.svg/1189px-Nissan-logo.svg.png"
             alt="Nissan">
         </div>
 
         <div class="carousel-item">
-          <img class="img-responsive img-cus"
+          <img class="img-responsive img-cus lazyload"
             src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/ToyotaLogoRedVer.svg/1280px-ToyotaLogoRedVer.svg.png"
             alt="Toyota">
         </div>
 
         <div class="carousel-item">
 
-          <img class="img-responsive img-cus"
+          <img class="img-responsive img-cus lazyload"
             src="https://upload.wikimedia.org/wikipedia/commons/c/c7/Ford-Motor-Company-Logo.png" alt="Ford">
         </div>
 

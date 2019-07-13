@@ -33,4 +33,10 @@ Route::group( ['middleware' => 'auth' ], function()
     Route::resource('/modelo','ModelosController');
     Route::resource('/category','CategoriesController');
     Route::resource('/marca','MarcasController');
+    Route::post('/product/{slug}/delete','ProductsController@delete');
+    Route::get('/borrados/product','ProductsController@borrados');
+    Route::get('/borrados/showProduct/{slug}','ProductsController@restaurar');
+    Route::post('/product/{id}/destroy', 'ProductsController@destroy');
+    Route::post('/product/{id}/restore', 'ProductsController@restore');
+
 });

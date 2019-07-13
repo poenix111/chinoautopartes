@@ -4,5 +4,7 @@
     "/css/contacto.css": "/css/contacto.css",
     "/css/global.css": "/css/global.css",
     "/css/misc.css": "/css/misc.css",
-    "/css/welcome.css": "/css/welcome.css"
+    "/css/welcome.css": "/css/welcome.css",
+    "/css/product.css": "/css/product.css",
+    "/js/product.js": "/js/product.js"
 }

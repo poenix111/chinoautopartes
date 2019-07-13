@@ -49,30 +49,25 @@ class MarcasController extends Controller
         //
         $marca = new Marca;
         $marca->nombre = $request['nombre'];
-        /* $request->foto->storeAs($request->foto->getClientOriginalName());
-        $marca->image = 'marcas/' . $request->foto->getClientOriginalName(); */
 
-        //obtenemos el campo file definido en el formulario
         $file = $request->file('foto');
 
-        //obtenemos el nombre del archivo
         $nombre = $file->getClientOriginalName();
         $now = new DateTime();
         $terminacion = '.' . Str::after($nombre, '.');
         $nombre = Str::before($nombre, '.');
         $nombre = $nombre . $now->format('YmdHis') . $terminacion; 
-        //indicamos que queremos guardar un nuevo archivo en el disco local
-        
+
         
         Storage::disk('public')->put($nombre,  \File::get($file));
 
         $path = url('storage/' . $nombre);
-        /* $file = File::get($path);
-        $type = File::mimeType($path); */
+   
         
+        /* $marca->image = App\Providers\Save::guardar($file); */
         $marca->image = $path;
         $marca->save();
-        return redirect('/marca')->with('message', 'Producto creado');;
+        return redirect('/marca')->with('message', 'Marca creada');;
     }
 
     /**
