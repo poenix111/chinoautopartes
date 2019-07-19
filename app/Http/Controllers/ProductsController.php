@@ -126,6 +126,15 @@ class ProductsController extends Controller
     public function edit($id)
     {
         //
+        $product = Product::withTrashed()->find($id);
+        $categorias = Category::all();
+        $modelos = Modelo::all();
+        $marcas = Marca::all();
+
+        $informacion = [];
+
+        array_push($informacion, $categorias, $modelos, $marcas, $product);
+        return view('product.edit', compact('informacion'));
     }
 
     /**
@@ -138,6 +147,52 @@ class ProductsController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $product = Product::find($id);
+        if ($request->has('foto')) {
+
+
+            $eliminar = $product->imagen;
+            Storage::delete('/public' . $eliminar);
+
+            $file = $request->file('foto');
+
+            $nombre = $file->getClientOriginalName();
+            $now = new DateTime();
+            $terminacion = '.' . Str::after($nombre, '.');
+            $nombre = Str::before($nombre, '.');
+            $nombre = $nombre . $now->format('YmdHis') . $terminacion;
+
+
+            Storage::disk('public')->put($nombre,  \File::get($file));
+
+            $path = url('storage/' . $nombre);
+
+            $product->imagen = $path;
+        }
+
+        $product->nombre = $request['nombre'];
+        $product->año = $request['year'];
+        $product->precio = $request['precio'];
+        if ($request['nuevo'] == "1") {
+            $product->nuevo = 1;
+        } else {
+            $product->nuevo = 0;
+        }
+
+        if ($request['garantia'] == "1") {
+            $product->garantia = 1;
+            $product->cantDias = $request['dias'];
+        } else {
+            $product->garantia = 0;
+            $product->cantDias = 0;
+        }
+        $product->id_categoria = $request['categoria'];
+        $product->id_modelo = $request['modelo'];
+        $product->id_marca = $request['marca'];
+
+        $product->save();
+        return redirect('/product')->with('message', 'Producto actualizado');;
+
     }
 
     /**
@@ -169,13 +224,15 @@ class ProductsController extends Controller
         return redirect('/product')->with('message', 'Producto borrado');;
     }
 
-    public function borrados(){
+    public function borrados()
+    {
 
         $products = Product::withTrashed()->whereNotNull('deleted_at')->paginate(15);
 
         return view('product.papelera', compact('products'));
     }
-    public function restaurar($slug){
+    public function restaurar($slug)
+    {
 
         $product = Product::withTrashed()->where('slug', $slug)->first();
 

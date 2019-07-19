@@ -35,8 +35,7 @@
         </div>
 
         <div class="btn-group">
-            <form action="{{ url('/product/'.$product->id.'/edit')}}" method="POST">
-              @csrf @method('POST')
+            <form action="{{ url('/product/'.$product->id.'/edit')}}" method="GET">
               <button type="submit" class="btn btn-sm btn-success">Editar</button>
             </form>
         </div>
